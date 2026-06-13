@@ -1,0 +1,646 @@
+
+/* ==========================================
+   BAGIAN 1: FONDASI DASAR & WARNA LATAR (DI-TERANGIN)
+   ========================================== */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body { 
+    font-family: 'Space Mono', monospace; 
+    background-color: #16161a; /* Diubah dari hitam pekat ke abu-abu baja taktis premium */
+    color: #ffffff; 
+    display: flex; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.main-layout { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: #16161a; /* Warna latar belakang utama agar seragam */
+}
+
+/* ==========================================
+   HEADER ATAS (KLASIK PREMIUM PORT)
+   ========================================== */
+.top-header { 
+    height: 75px; 
+    background-color: #1a1a20; /* Dibuat sedikit lebih terang agar kontras dengan body */
+    border-bottom: 3px solid #ffffff; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 40px; 
+    flex-shrink: 0;
+}
+
+.header-left { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 20px; 
+    font-weight: 800; 
+    letter-spacing: 1px; 
+    color: #ffffff; 
+    text-transform: uppercase; 
+}
+
+.header-right { 
+    font-size: 11px; 
+    color: #94a3b8; /* Diubah ke abu-abu terang agar teks kanan lebih terbaca jelas */
+    text-transform: uppercase; 
+    font-weight: 700; 
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.header-right span { 
+    color: #000000; 
+    background: #ffffff; 
+    padding: 2px 8px;
+    font-weight: 800;
+}
+
+/* ==========================================
+   SIDEBAR NAVIGASI (COMPACT STYLE - NO SCROLL)
+   ========================================== */
+.body-container { 
+    display: flex; 
+    flex: 1; 
+    height: calc(100vh - 75px); 
+    width: 100vw;
+    overflow: hidden; 
+}
+
+.sidebar { 
+    width: 270px; /* Dipersempit sedikit agar area kanan lebih luas */
+    background-color: #000000;
+    border-right: 3px solid #ffffff; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 25px 20px; /* Padding atas-bawah dikurangi agar hemat ruang */
+    justify-content: space-between; 
+    flex-shrink: 0;
+    overflow: hidden; /* Mengunci total agar tidak akan pernah memunculkan scrollbar */
+}
+
+.sidebar-title { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 16px; /* Diperkecil dari 22px */
+    font-weight: 800; 
+    color: #ffffff; 
+    margin-bottom: 15px; /* Jarak dirapatkan */
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.logo-section {
+    text-align: left;
+    margin-bottom: 20px; /* Jarak dirapatkan */
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ffffff;
+}
+
+.logo-icon {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px; /* Diperkecil dari 26px */
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.gang-name {
+    font-size: 10px; /* Diperkecil */
+    color: #ff0033; 
+    letter-spacing: 2px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; /* Jarak antar tombol dirapatkan dari 14px ke 8px */
+}
+
+/* Desain Channel Ramping & Padat (Ultra-Compact) */
+.nav-menu a { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    color: #555555; 
+    text-decoration: none; 
+    padding: 10px 14px; /* Padding vertikal dipotong dari 15px menjadi 10px */
+    font-weight: 800; 
+    text-transform: uppercase; 
+    font-size: 11px; /* Ukuran font dikecilkan dari 13px ke 11px agar slim */
+    letter-spacing: 0.5px; 
+    background-color: #000000; 
+    border: 3px solid #222222; 
+    display: block; 
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+/* Efek Hover Sentakan Merah Pop */
+.nav-menu a:hover { 
+    color: #ffffff; 
+    background-color: #ff0033; 
+    border-color: #ff0033; 
+    padding-left: 20px; /* Jarak geser disesuaikan dengan kotak yang lebih kecil */
+    transform: translateX(4px); 
+}
+
+/* Blok Putih Kontras Tinggi */
+.nav-menu a.active { 
+    color: #000000; 
+    background-color: #ffffff; 
+    border-color: #ffffff; 
+    padding-left: 20px; 
+    transform: translateX(4px); 
+}
+
+.sidebar-footer-warning { 
+    font-size: 9px; 
+    font-weight: 700; 
+    color: #444444; 
+    text-transform: uppercase; 
+    border: 2px dashed #222222; 
+    padding: 10px;
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.main-content { 
+    flex: 1; 
+    padding: 60px 80px; 
+    overflow-y: auto; 
+    height: 100%;
+    background-color: #000000;
+}
+
+.content-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 50px; 
+    max-width: 950px; 
+}
+.info-box { 
+    border: 3px solid #ffffff; /* Petak putih tebal */
+    background-color: #000000; 
+    padding: 40px; 
+    position: relative; 
+}
+
+.box-label { 
+    position: absolute; 
+    top: -14px; 
+    left: 24px; 
+    background-color: #ffffff; 
+    color: #000000; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 11px; 
+    font-weight: 800; 
+    padding: 4px 14px; 
+    text-transform: uppercase; 
+}
+.box-label.red-label { background-color: #ff0033; color: #ffffff; }
+
+.box-inner-title { 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    margin-bottom: 15px; 
+    text-transform: uppercase; 
+}
+
+.box-text { 
+    font-size: 14px; 
+    line-height: 2.2; 
+    color: #e2e8f0; 
+}
+
+.overview-grid { 
+    display: grid; 
+    grid-template-columns: 1.4fr 1fr; 
+    gap: 40px; 
+}
+
+.meta-status-container { 
+    display: flex; 
+    gap: 70px; 
+    margin-top: 35px; 
+    border-top: 3px solid #ffffff; 
+    padding-top: 25px; 
+}
+
+.meta-item label { 
+    display: block; 
+    font-size: 11px; 
+    color: #666666; 
+    text-transform: uppercase; 
+    margin-bottom: 6px; 
+    font-weight: 700;
+}
+.meta-item span { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 15px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    text-transform: uppercase; 
+}
+.meta-item span.danger-text { color: #ff0033; }
+
+.turf-map-card { 
+    border: 3px solid #ffffff; 
+    width: 100%; 
+    object-fit: cover; 
+    min-height: 275px; 
+}
+
+.section-divider-title { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 24px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    text-transform: uppercase; 
+    display: flex; 
+    justify-content: space-between; 
+    border-bottom: 3px solid #ffffff; 
+    padding-bottom: 16px; 
+}
+.sub-title-member { 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px; 
+    font-weight: 800; 
+    color: #ff0033; 
+    text-transform: uppercase; 
+    margin-top: 15px; 
+}
+.member-count { font-family: 'Space Mono', monospace; font-size: 13px; color: #64748b; font-weight: 700; }
+
+/* ROSTER ANGGOTA PETAK TEBAL POP */
+.polaroid-grid { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 25px; }
+
+.polaroid-card {
+    background-color: #000000; 
+    padding: 16px;
+    border: 3px solid #ffffff; 
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.polaroid-card:hover {
+    background-color: #0a0a0c;
+    border-color: #ff0033; 
+    transform: translateY(-6px);
+}
+
+.polaroid-img-wrapper { width: 100%; height: 195px; overflow: hidden; border: 3px solid #ffffff; }
+.polaroid-card:hover .polaroid-img-wrapper { border-color: #ff0033; }
+.polaroid-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.polaroid-caption { width: 100%; text-align: left; margin-top: 16px; }
+.polaroid-caption strong { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800; color: #ffffff; }
+.polaroid-card:hover .polaroid-caption strong { color: #ff0033; }
+.polaroid-caption span { display: block; font-size: 12px; color: #ff3b3b; margin-top: 6px; font-weight: 700; }
+
+/* APPROACH HISTORY ACCURATE */
+.history-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ffffff; padding-bottom: 16px; margin-bottom: 40px; }
+.history-main-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: #ffffff; }
+.history-meta-right { display: flex; align-items: center; gap: 25px; }
+.history-search { background-color: transparent; border: 3px solid #222222; padding: 10px 16px; color: #ffffff; font-family: inherit; font-size: 13px; width: 200px; }
+.history-search:focus { outline: none; border-color: #ff0033; }
+.history-counter { font-size: 12px; font-weight: 700; color: #555555; }
+.history-counter span { color: #ffffff; }
+
+.history-list-container { display: flex; flex-direction: column; gap: 45px; }
+.history-row-item { background-color: transparent; display: flex; flex-direction: column; }
+
+.status-tag-dec, .status-tag-acc { align-self: flex-start; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 800; padding: 5px 12px; color: #ffffff; margin-bottom: 16px; }
+.status-tag-dec { background-color: #ff0033; }
+.status-tag-acc { background-color: #ffffff; color: #000000; }
+
+.history-char-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 8px; }
+.history-char-meta { font-size: 13px; color: #666666; line-height: 1.7; }
+
+.history-reason-box { margin-top: 18px; padding: 20px 25px; border: 3px solid transparent; }
+.history-reason-box.reason-box-dec { background-color: rgba(255, 0, 51, 0.04); border-color: rgba(255, 0, 51, 0.12); }
+.history-reason-box.reason-box-acc { background-color: rgba(255, 255, 255, 0.02); border-color: rgba(255, 255, 255, 0.08); }
+.history-reason-box label { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
+.reason-box-dec label { color: #ff0033; }
+.reason-box-acc label { color: #ffffff; }
+.history-reason-box p { font-size: 14px; color: #cccccc; }
+
+/* UTILITY FLUID DESIGN */
+.floating-status-btn { position: fixed; bottom: 30px; right: 40px; background-color: #ff0033; color: #ffffff; border: 3px solid #ffffff; padding: 16px 32px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; z-index: 999; transition: all 0.2s; }
+.floating-status-btn:hover { background-color: #ffffff; color: #000000; border-color: #ffffff; transform: scale(1.05); }
+
+.form-group { margin-bottom: 30px; }
+.form-group label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 800; color: #ffffff; margin-bottom: 12px; display: block; text-transform: uppercase; }
+.form-control { width: 100%; padding: 18px; background-color: #000000; border: 3px solid #ffffff; color: #ffffff; font-family: inherit; font-size: 15px; }
+.form-control:focus { outline: none; border-color: #ff0033; }
+.btn-submit { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #000000; border: 3px solid #ffffff; padding: 16px 32px; font-weight: 800; text-transform: uppercase; font-size: 12px; cursor: pointer; transition: all 0.2s; }
+.btn-submit:hover { background-color: #ff0033; color: #ffffff; border-color: #ff0033; }
+
+.app-card { background-color: #000000; border: 3px solid #ffffff; padding: 35px; margin-bottom: 30px; }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }
+.app-item label { font-size: 11px; color: #666666; text-transform: uppercase; display: block; margin-bottom: 6px; font-weight: 700; }
+.app-item span { font-size: 15px; color: #ffffff; }
+.btn-action { font-family: 'Plus Jakarta Sans', sans-serif; padding: 14px 24px; border: 3px solid #ffffff; background: transparent; color: #ffffff; font-size: 11px; text-transform: uppercase; font-weight: 800; cursor: pointer; margin-right: 12px; }
+.btn-accept:hover { background: #ffffff; color: #000; }
+.btn-deny:hover { background: #ff0033; color: #fff; border-color: #ff0033; }
+
+.info-row { background-color: #000000; border: 3px solid #ffffff; border-left: 14px solid #666666; padding: 30px; margin-bottom: 25px; }
+.info-row.accepted { border-left-color: #ffffff; }
+.info-row.denied { border-left-color: #ff0033; }
+.status-badge { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; }
+.status-badge.acc { color: #ffffff; }
+.status-badge.dec { color: #ff0033; }
+.info-reason { font-size: 14px; color: #666666; margin-top: 12px; font-style: italic; font-weight: 700; }
+
+/* ==========================================
+   PERBAIKAN MUTLAK LAYOUT MOBILE (ANDROID FIX)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Mengatur ulang kontainer tubuh agar konten tidak amblas ke bawah navigasi */
+    .body-container { 
+        flex-direction: column; 
+    }
+    
+    /* 2. Mengubah Sidebar Kiri Menjadi Navigasi Bawah 2 Baris yang Rapi & Kompak */
+    .sidebar { 
+        width: 100%; 
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        padding: 10px 15px; 
+        background-color: #1a1a20; /* Warna disesuaikan agak terang sesuai request kemarin */
+        border-right: none;
+        border-top: 3px solid #ffffff; 
+        z-index: 1000;
+        overflow: hidden;
+    }
+    
+    .sidebar-title, .logo-section, .sidebar-footer-warning { 
+        display: none; /* Menyembunyikan dekorasi yang memakan tempat di HP */
+    }
+    
+    /* Memaksa menu berjejer fleksibel dan melipat rapi jika layar terlalu sempit */
+    .nav-menu { 
+        flex-direction: row; 
+        flex-wrap: wrap; /* Mengizinkan menu melipat ke baris baru agar tidak tabrakan */
+        justify-content: center;
+        gap: 6px; 
+    }
+    
+    /* Mengecilkan ukuran kotak channel agar pas di jempol layar HP */
+    .nav-menu a { 
+        flex: none;
+        display: inline-block;
+        padding: 6px 10px; /* Di-trim sangat tipis khusus mobile */
+        font-size: 10px; /* Font dikecilkan dari 11px agar muat penuh */
+        border: 2px solid #222222;
+        text-align: center;
+    }
+    
+    .nav-menu a:hover, .nav-menu a.active { 
+        background-color: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        padding-left: 10px;
+        transform: none; /* Matikan efek geser translateX di HP agar tidak rusak */
+    }
+
+    /* 3. Memberikan Jarak Bernapas di Area Konten Kanan Agar Tidak Tertutup Menu */
+    .main-content { 
+        padding: 25px 15px; 
+        margin-bottom: 110px; /* Memberikan ruang kosong tebal di bawah agar teks form tidak mentok bar navigasi */
+        height: calc(100vh - 185px);
+        overflow-y: auto;
+    }
+    
+    .content-wrapper { 
+        gap: 30px; 
+    }
+    
+    /* Mengubah layout About dari 65% menjadi 100% lebar layar HP agar gambar terlihat proporsional */
+    .story-media-frame {
+        width: 100%;
+        max-height: 260px;
+    }
+
+    /* 4. Memindahkan Posisi Tombol Melayang Merah ke Atas Navigasi HP */
+    .floating-status-btn { 
+        position: fixed;
+        bottom: 120px; /* Dinaikkan ke atas agar tidak lagi menutupi menu channel */
+        right: 20px; 
+        padding: 10px 20px;
+        font-size: 10px;
+        box-shadow: 5px 5px 0px #000;
+    }
+}
+
+
+/* ==========================================
+   VERTICAL STORY LAYOUT (RAMPING & NYAMAN DI MATA)
+   ========================================== */
+.story-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.story-media-frame {
+    width: 65%; /* Ukuran kompak nyaman di mata */
+    margin: 0; /* Mengubah dari '0 auto' menjadi '0' agar posisi kotak foto rapat ke kiri */
+    border: 3px solid #ffffff; 
+    background-color: #000000;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
+.story-full-img {
+    width: 100%;
+    height: auto;
+    max-height: 380px; /* Batas tinggi diperpendek dari 480px agar tidak makan ruang */
+    object-fit: cover;
+    display: block;
+}
+
+.story-text-box {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.story-paragraph {
+    font-size: 14px;
+    line-height: 2.2;
+    color: #e2e8f0;
+    font-weight: 700;
+    text-align: justify;
+}
+
+/* ==========================================
+   PREMIUM UPDATE: VACANT CARDS & SEARCH STYLING
+   ========================================== */
+.roster-master-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.rank-group-section {
+    display: block;
+    width: 100%;
+    transition: opacity 0.25s ease;
+}
+
+/* TAMPILAN KHUSUS KARTU LOWONGAN (VACANT SLOT) - REDUP MEWAH */
+.polaroid-card.vacant-card {
+    border-color: #222226; /* Garis pembatas abu-abu gelap redup */
+    opacity: 0.45; /* Dibuat semi-transparan berkelas */
+    filter: grayscale(100%); /* Efek foto hitam-putih murni */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Interaksi Kursor Saat Menyentuh Kartu Lowongan */
+.polaroid-card.vacant-card:hover {
+    opacity: 0.85; /* Sedikit menyala saat disorot */
+    border-color: #ff0033; /* Berubah aksen merah pop */
+    filter: grayscale(0%);
+    transform: translateY(-4px);
+}
+
+.polaroid-card.vacant-card .polaroid-caption span {
+    color: #55555d; /* Teks sub-judul dibuat redup */
+    font-weight: 700;
+}
+
+.polaroid-card.vacant-card:hover .polaroid-caption strong {
+    color: #ff0033;
+}
+
+/* ==========================================
+   PANEL EDITING COMPACT LAYOUT (ANTI-MELAR)
+   ========================================== */
+.compact-edit-form {
+    width: 100%;
+}
+
+/* Mengubah layout form menjadi 2 kolom kiri-kanan */
+.edit-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi rata 50% kiri dan 50% kanan */
+    gap: 30px; /* Jarak aman biar tidak saling bertabrakan */
+    align-items: flex-start;
+}
+
+/* Penyelarasan kolom input teks di sebelah kiri */
+.edit-column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Penyelarasan kolom upload & tombol aksi di sebelah kanan */
+.edit-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Grup tombol Save & Delete agar berjejer rapi ke samping */
+.edit-action-buttons-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Tombol Save versi ramping taktis */
+.btn-save-tactical {
+    flex: 1;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+    padding: 12px 20px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.btn-save-tactical:hover {
+    background-color: #ff0033 !important;
+    border-color: #ff0033 !important;
+    color: #ffffff !important;
+}
+
+/* Tombol Delete versi ramping taktis */
+.btn-delete-tactical {
+    flex: 1;
+    background-color: #000000 !important;
+    color: #ff0033 !important;
+    border: 1px solid #ff0033 !important;
+    padding: 12px 20px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 !important; /* Reset margin bawaan */
+}
+.btn-delete-tactical:hover {
+    background-color: #ff0033 !important;
+    color: #ffffff !important;
+}
+
+/* RESPONSIF UNTUK HP ANDROID: Otomatis kembali vertikal jika layar sempit */
+@media (max-width: 768px) {
+    .edit-grid-wrapper {
+        grid-template-columns: 1fr; /* Jadi 1 kolom penuh di HP */
+        gap: 20px;
+    }
+    .edit-action-buttons-group {
+        flex-direction: column; /* Tombol bertumpuk atas-bawah di HP */
+        gap: 10px;
+    }
+}
+
+div[id="content-container"] > div {
+    animation: tacticalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes tacticalFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+input, textarea, select {
+    transition: all 0.2s ease-in-out !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #ff0033 !important;
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.5) !important;
+    outline: none !important;
+}
+
+div[class*="frame"], div[class*="media"], div[class*="img"] {
+    overflow: hidden !important;
+}
+
+img {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+div[class*="frame"]:hover img, div[class*="media"]:hover img, div[class*="img"]:hover img {
+    transform: scale(1.06) !important;
+}
